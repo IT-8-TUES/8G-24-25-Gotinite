@@ -97,7 +97,6 @@ const browStyles = {
 };
 
 function generateBrows(emotion) {
-  console.log("Generating brows for mood:", emotion);
   const brows = document.getElementById('brows');
   if (!brows || !browStyles[emotion]) return;
 
