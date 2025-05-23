@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>Галерия на настроенията</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Галерия според настроението на котката</h1>
+    <h2 id="mood-title">Настроение: </h2>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <script>
+    const mood = localStorage.getItem("catMood") || "Happy";
+    document.getElementById("mood-title").textContent += mood;
+
+    const moodImages = {
+      Angry: [
+        "images/angry1.webp",
+        "images/angry2.webp",
+        "images/angry3.webp"
+      ],
+      Happy: [
+        "images/happy1.webp",
+        "images/happy2.webp",
+        "images/happy3.webp"
+      ],
+      Sad: [
+        "images/sad1.webp",
+        "images/sad2.webp",
+        "images/sad3.webp"
+      ],
+      Confused: [
+        "images/confused1.webp",
+        "images/confused2.webp",
+        "images/confused3.webp"
+      ],
+      Judgy: [
+        "images/judgy1.webp",
+        "images/judgy2.webp",
+        "images/judgy3.webp"
+      ],
+      Bored: [
+        "images/bored1.webp",
+        "images/bored2.webp",
+        "images/bored3.webp"
+      ]
+    };
+
+    const images = moodImages[mood] || [];
+    const gallery = document.getElementById("gallery");
+
+    if (images.length === 0) {
+      gallery.innerHTML = "<p>Няма изображения за това настроение.</p>";
+    } else {
+      images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = mood + " cat";
+        gallery.appendChild(img);
+      });
+    }
+  </script>
+</body>
+</html>

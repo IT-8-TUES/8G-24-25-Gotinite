@@ -48,8 +48,8 @@ const browStyles = {
     'transform: rotate(1deg) translate(30px, 6px);'
   ],
   Sad: [
-    'transform: rotate(15deg) translate(30px, 5px);',
-    'transform: rotate(-15deg) translate(-30px, 1px);'
+    'transform: rotate(15deg) translate(40px, 5px);',
+    'transform: rotate(-15deg) translate(-40px, 1px);'
   ],
   Judgy: [
     'transform: rotate(10deg) translate(-30px, 15px);',

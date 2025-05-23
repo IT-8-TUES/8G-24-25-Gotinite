@@ -12,14 +12,14 @@ body {
        display: flex;
        flex-direction: column;
        align-items: center;
-       gap: 20px;
+       gap: 0px;
        }
     .cat-preview {
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
   position: relative;
-  min-width: 280px;
+  min-width: 1px;
 }
 
     .cat-background {
@@ -134,14 +134,22 @@ body {
     }
 
     .emotion-panel {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:  10px 100px 10px;
+  width: 1000px;
+  max-width: 200px;
+  margin: 0;
+  flex-wrap: wrap; 
+  display: grid;       
+  grid-template-columns: 1fr;       
+  gap: 10px;
+}
 
     .emotion-button {
       background-color: rgba(210, 145, 170, 0.85);
-      padding: 10px 20px;
+      padding: 10px 2px;
       border: none;
       border-radius: 10px;
       font-size: 1rem;
