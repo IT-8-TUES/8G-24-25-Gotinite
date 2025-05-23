@@ -40,28 +40,28 @@ R = (R < 255) ? R : 255;
 
     const browStyles = {
       Angry: [
-        'transform: rotate(20deg) translate(-20px, 10px);',
-        'transform: rotate(-20deg) translate(20px, 6px);'
+        'transform: rotate(20deg) translate(-30px, 10px);',
+        'transform: rotate(-20deg) translate(30px, 6px);'
       ],
       Happy: [
-        'transform: rotate(-1deg) translate(-20px, 10px);',
-        'transform: rotate(-20deg) translate(20px, 6px);'
+        'transform: rotate(-1deg) translate(-30px, 10px);',
+        'transform: rotate(1deg) translate(30px, 6px);'
       ],
       Sad: [
-      'transform: rotate(15deg) translate(25px, 5px);',
-        'transform: rotate(-15deg) translate(-25px, 1px);'
+      'transform: rotate(15deg) translate(30px, 5px);',
+        'transform: rotate(-15deg) translate(-30px, 1px);'
       ],
       Judgy: [
-        'transform: rotate(10deg) translate(-20px, 15px);',
-        'transform: rotate(-20deg) translate(20px, 6px);'
+        'transform: rotate(10deg) translate(-30px, 15px);',
+        'transform: rotate(-20deg) translate(30px, 6px);'
       ],
       Bored: [
-      'transform: rotate(-1deg) translate(-20px, 10px);',
-        'transform: rotate(-1deg) translate(23px, 6px);',
+      'transform: rotate(-1deg) translate(-30px, 10px);',
+        'transform: rotate(-1deg) translate(30px, 6px);',
       ],
       Confused: [
-        'transform: rotate(-1deg) translate(-20px, 10px);',
-        'transform: rotate(-19deg) translate(20px, 6px);'
+        'transform: rotate(-1deg) translate(-30px, 10px);',
+        'transform: rotate(-19deg) translate(30px, 6px);'
       ],
     };
 

@@ -15,8 +15,12 @@ body {
        gap: 20px;
        }
     .cat-preview {
-      position: relative;
-    }
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 280px;
+}
 
     .cat-background {
       position: absolute;
