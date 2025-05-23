@@ -1,4 +1,4 @@
-<style>
+
   body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
@@ -6,6 +6,7 @@
   }
 
   nav {
+    width: 100%;
     background: rgba(210, 145, 170, 0.85);
     display: flex;
     align-items: center;
@@ -13,7 +14,9 @@
     padding: 10px 20px;
     position: sticky;
     top: 0;
+    z-index: 1000;
   }
+  
 
   .menu-toggle {
     font-size: 26px;
@@ -61,4 +64,4 @@
   .show {
     display: block;
   }
-</style>
+

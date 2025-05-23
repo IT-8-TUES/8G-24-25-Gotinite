@@ -97,12 +97,12 @@
             let topType = Object.keys(scores).reduce((a, b) => scores[a] >= scores[b] ? a : b);
 
             let descriptions = {
-                angry: "😾 You are an Angry Cat! You have a short fuse and a big personality.",
-                happy: "😺 You are a Happy Cat! Joyful, social, and full of life.",
-                sad: "😿 You are a Sad Cat! Deep and emotional, with a heart full of feelings.",
-                confused: "😵 You are a Confused Cat! Life is weird, but you roll with it.",
-                judgy: "😼 You are a Judgy Cat! Observant, sharp, and always silently evaluating.",
-                bored: "😐 You are a Bored Cat! Nothing excites you... not even breakfast."
+                angry: "You are an Angry Cat! You have a short fuse and a big personality.",
+                happy: "You are a Happy Cat! Joyful, social, and full of life.",
+                sad: "You are a Sad Cat! Deep and emotional, with a heart full of feelings.",
+                confused: "You are a Confused Cat! Life is weird, but you roll with it.",
+                judgy: "You are a Judgy Cat! Observant, sharp, and always silently evaluating.",
+                bored: "You are a Bored Cat! Nothing excites you... not even breakfast."
             };
 
             document.getElementById("result").innerText = descriptions[topType];
