@@ -1,3 +1,8 @@
+/* Font setup */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .cat {
   animation: breathe 3s ease-in-out infinite;
   transform-origin: center;
@@ -9,8 +14,8 @@
     opacity: 1;
   }
   50% {
-    transform: scale(1.08) translateY(-6px); /* More visible scale + gentle lift */
-    opacity: 0.95; /* Slight fade to add softness */
+    transform: scale(1.08) translateY(-6px);
+    opacity: 0.95;
   }
 }
 

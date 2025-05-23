@@ -1,14 +1,60 @@
-const quotes = [
-  "Even the smallest cat is a masterpiece. – Leonardo da Vinci",
-  "Cats leave paw prints on your heart.",
-  "A purring cat is the definition of peace.",
-  "Take a nap. Recharge. Like a cat would.",
-  "Inhale... purr... exhale... relax..."
-];
+const moodQuotes = {
+  Angry: [
+    "Even cats have their bad fur days.",
+    "Hiss off, I'm napping!",
+    "I'm not mad... I'm just *cat-thartic*.",
+    "Back off. This tail has boundaries.",
+    "Anger is just passion with claws."
+  ],
+  Happy: [
+    "Purr more, hiss less.",
+    "Today is a good day for a sunbeam nap!",
+    "Pawsitive vibes only!",
+    "Purring is my cardio.",
+    "A happy cat is a fluffy cat."
+  ],
+  Sad: [
+    "Not every nap can fix a heavy heart.",
+    "I'll be under the bed if anyone needs me.",
+    "Soft meows and softer tears.",
+    "Sometimes even cats feel blue.",
+    "Rainy days and lost toys..."
+  ],
+  Judgy: [
+    "Your choices are questionable. – Cat",
+    "I’m silently judging your lack of tuna.",
+    "Why did you touch my paw?",
+    "Do better. For my sake.",
+    "Yes, I *meant* to knock that over."
+  ],
+  Bored: [
+    "There's nothing left to knock over...",
+    "Entertain me, peasant.",
+    "Staring into the void... again.",
+    "Guess I’ll nap. Again.",
+    "I already counted all the ceiling dots."
+  ],
+  Confused: [
+    "Where did the red dot go?!",
+    "Am I on the ceiling or is it the wall?",
+    "I was thinking about... wait what?",
+    "My brain rebooted mid-purr.",
+    "This is not my final form."
+  ],
+  Default: [
+    "Even the smallest cat is a masterpiece. – Leonardo da Vinci",
+    "Cats leave paw prints on your heart.",
+    "A purring cat is the definition of peace.",
+    "Take a nap. Recharge. Like a cat would.",
+    "Inhale... purr... exhale... relax..."
+  ]
+};
 
-function newQuote() {
-  const q = quotes[Math.floor(Math.random() * quotes.length)];
-  document.getElementById('quote').innerText = q;
+function newQuote(mood) {
+  const quoteBox = document.getElementById('quote');
+  const quotes = moodQuotes[mood] || moodQuotes.Default;
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteBox.innerText = randomQuote;
 }
 
 function hexToRgb(hex) {
@@ -144,8 +190,10 @@ window.onload = () => {
     eyeInput.addEventListener('input', updatePreview);
   }
 
-  // 👉 Apply brows on load
   if (mood) {
     generateBrows(mood);
+    newQuote(mood);
+  } else {
+    newQuote("Default");
   }
 };

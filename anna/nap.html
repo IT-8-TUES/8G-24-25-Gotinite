@@ -6,6 +6,7 @@
   <title>Nap Time</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="nap.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar">
@@ -48,8 +49,8 @@
 
     <div class="customizer-controls">
       <div class="controls-box">
-        <p id="quote">Click below for a relaxing cat thought.</p>
-        <button onclick="newQuote()">New Quote</button>
+        <p id="quote">Click below for a cat thought.</p>
+        <button onclick="newQuote(localStorage.getItem('catMood'))">New Quote</button>
       </div>
     </div>
   </div>
