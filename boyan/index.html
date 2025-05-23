@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What Kind of Cat Are You?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>What Kind of Cat Are You?</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. How do you behave at parties?</p>
+                <label><input type="radio" name="q1" value="happy"> I’m the center of attention</label><br>
+                <label><input type="radio" name="q1" value="judgy"> I watch everyone quietly</label><br>
+                <label><input type="radio" name="q1" value="confused"> Why am I even here?</label><br>
+                <label><input type="radio" name="q1" value="angry"> I get irritated by noise</label><br>
+                <label><input type="radio" name="q1" value="bored"> It’s all the same every time</label><br>
+                <label><input type="radio" name="q1" value="sad"> I feel kind of invisible</label>
+            </div>
+
+            <div class="question">
+                <p>2. How do you spend your weekends?</p>
+                <label><input type="radio" name="q2" value="happy"> Exploring and meeting friends</label><br>
+                <label><input type="radio" name="q2" value="bored"> Lying on the couch all day</label><br>
+                <label><input type="radio" name="q2" value="confused"> Losing track of time</label><br>
+                <label><input type="radio" name="q2" value="judgy"> Judging people on social media</label><br>
+                <label><input type="radio" name="q2" value="angry"> Arguing online</label><br>
+                <label><input type="radio" name="q2" value="sad"> Thinking about the past</label>
+            </div>
+
+            <div class="question">
+                <p>3. How do you react to problems?</p>
+                <label><input type="radio" name="q3" value="angry"> I explode quickly</label><br>
+                <label><input type="radio" name="q3" value="sad"> I get overwhelmed and sad</label><br>
+                <label><input type="radio" name="q3" value="confused"> I panic and forget what to do</label><br>
+                <label><input type="radio" name="q3" value="judgy"> I blame others silently</label><br>
+                <label><input type="radio" name="q3" value="bored"> I just ignore it</label><br>
+                <label><input type="radio" name="q3" value="happy"> I try to stay positive</label>
+            </div>
+
+            <div class="question">
+                <p>4. What’s your favorite time of day?</p>
+                <label><input type="radio" name="q4" value="happy"> Morning – fresh start!</label><br>
+                <label><input type="radio" name="q4" value="bored"> Anytime... they’re all the same</label><br>
+                <label><input type="radio" name="q4" value="sad"> Late night when it’s quiet</label><br>
+                <label><input type="radio" name="q4" value="confused"> Whatever time this is</label><br>
+                <label><input type="radio" name="q4" value="judgy"> Golden hour, for the light</label><br>
+                <label><input type="radio" name="q4" value="angry"> Evening – when I'm annoyed</label>
+            </div>
+
+            <div class="question">
+                <p>5. How do you feel in the morning?</p>
+                <label><input type="radio" name="q5" value="angry"> Don’t talk to me</label><br>
+                <label><input type="radio" name="q5" value="happy"> I’m full of energy!</label><br>
+                <label><input type="radio" name="q5" value="sad"> Another day… sigh</label><br>
+                <label><input type="radio" name="q5" value="confused"> Where am I?</label><br>
+                <label><input type="radio" name="q5" value="bored"> Why even get up?</label><br>
+                <label><input type="radio" name="q5" value="judgy"> Already judging the world</label>
+            </div>
+
+            <div class="question">
+                <p>6. What is your role in your friend group?</p>
+                <label><input type="radio" name="q6" value="happy"> The fun one</label><br>
+                <label><input type="radio" name="q6" value="sad"> The listener</label><br>
+                <label><input type="radio" name="q6" value="judgy"> The honest one</label><br>
+                <label><input type="radio" name="q6" value="confused"> The weird one</label><br>
+                <label><input type="radio" name="q6" value="bored"> The silent one</label><br>
+                <label><input type="radio" name="q6" value="angry"> The one who argues</label>
+            </div>
+
+            <button type="button" onclick="showResult()">See the result</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showResult() {
+            const form = document.getElementById("quizForm");
+            const answers = new FormData(form);
+
+            let scores = {
+                angry: 0,
+                happy: 0,
+                sad: 0,
+                confused: 0,
+                judgy: 0,
+                bored: 0
+            };
+
+            for (let value of answers.values()) {
+                if (scores.hasOwnProperty(value)) {
+                    scores[value]++;
+                }
+            }
+
+            let topType = Object.keys(scores).reduce((a, b) => scores[a] >= scores[b] ? a : b);
+
+            let descriptions = {
+                angry: "😾 You are an Angry Cat! You have a short fuse and a big personality.",
+                happy: "😺 You are a Happy Cat! Joyful, social, and full of life.",
+                sad: "😿 You are a Sad Cat! Deep and emotional, with a heart full of feelings.",
+                confused: "😵 You are a Confused Cat! Life is weird, but you roll with it.",
+                judgy: "😼 You are a Judgy Cat! Observant, sharp, and always silently evaluating.",
+                bored: "😐 You are a Bored Cat! Nothing excites you... not even breakfast."
+            };
+
+            document.getElementById("result").innerText = descriptions[topType];
+        }
+    </script>
+</body>
+</html>
