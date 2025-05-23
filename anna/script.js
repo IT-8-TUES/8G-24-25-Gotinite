@@ -198,9 +198,18 @@ window.onload = () => {
   }
 };
 
-// Load the shared navbar.html into the page
-fetch('../navbar.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('navbar-container').innerHTML = html;
-      });
+function toggleMenu() {
+  document.getElementById("menuDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches('.menu-toggle')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

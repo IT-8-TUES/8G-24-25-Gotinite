@@ -9,19 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav>
+    <div class="dropdown">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div id="menuDropdown" class="dropdown-content">
+        <a href="anna/index.html">Customize</a>
+        <a href="vyara/index.html">Meow Mood</a>
+        <a href="anna/nap.html">Cat Nap</a>
+        <a href="vyara/gallery.html">Gallery</a>
+        <a href="yoanna/index.html">Quiz Me</a>
+        <a href="boyan/index.html">Cat Type</a>
+        <a href="yoanna/facts.html">Facts</a>
+      </div>
     </div>
-    <div class="page-title">Nap Time</div>
-    <ul class="menu hidden" id="nav-menu">
-      <li><a href="index.html">Customizer</a></li>
-      <li><a href="character.html">MeowMood</a></li>
-      <li><a href="sleep.html">Sleepy Thoughts</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="quiz.html">Cat Quiz</a></li>
-      <li><a href="what-cat.html">What Cat Are You?</a></li>
-    </ul>
+    <div class="page-title">Nap time</div>
+    <div style="width: 26px;"></div>
   </nav>
 
   <div class="customizer-container">
