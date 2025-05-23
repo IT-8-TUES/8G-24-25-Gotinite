@@ -6,56 +6,87 @@
   <link rel="stylesheet" href="gallery.css" />
 </head>
 <body>
+  <nav>
+    <div class="dropdown">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div id="menuDropdown" class="dropdown-content">
+        <a href="../anna/index.html">Customize</a>
+        <a href="index.html">Meow Mood</a>
+        <a href="../anna/nap.html">Cat Nap</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="../yoanna/index.html">Quiz Me</a>
+        <a href="../boyan/index.html">Cat Type</a>
+        <a href="../yoanna/facts.html">Facts</a>
+      </div>
+    </div>
+    <div class="page-title">Customize your cat</div>
+    <div style="width: 26px;"></div>
+  </nav>
   <div class="container">
-    
+
     <h2 id="mood-title">mood: </h2>
     <div class="gallery" id="gallery"></div>
   </div>
 
   <script>
-    const mood = localStorage.getItem("catMood") || "Happy";
-    document.getElementById("mood-title").textContent += mood;
+  const mood = localStorage.getItem("catMood") || "Happy";
+  document.getElementById("mood-title").textContent += mood;
 
-    const moodImages = {
-      Angry: [
-        "../images/catimg/angrycat1.webp",
-        "../images/catimg/angrycat2.webp"
-      ],
-      Happy: [
-        "../images/catimg/happycat1.webp",
-       "../images/catimg/happycat2.webp",
-      ],
-      Sad: [
-         "../images/catimg/sadcat1.webp",
-         "../images/catimg/sadcat2.webp"
-      ],
-      Confused: [
-         "../images/catimg/confusedcat1.webp",
-         "../images/catimg/confusedcat2.webp",
-      ],
-      Judgy: [
-         "../images/catimg/judgycat1.webp",
-        "../images/catimg/judgycat2.webp",
-      ],
-      Bored: [
-        "../images/catimg/boredcat1.webp",
-        "../images/catimg/boredcat2.webp",
-      ]
-    };
+  const moodImages = {
+    Angry: [
+      "../images/catimg/angrycat1.webp",
+      "../images/catimg/angrycat2.webp"
+    ],
+    Happy: [
+      "../images/catimg/happycat1.webp",
+      "../images/catimg/happycat2.webp"
+    ],
+    Sad: [
+      "../images/catimg/sadcat1.webp",
+      "../images/catimg/sadcat2.webp"
+    ],
+    Confused: [
+      "../images/catimg/confusedcat1.webp",
+      "../images/catimg/confusedcat2.webp"
+    ],
+    Judgy: [
+      "../images/catimg/judgycat1.webp",
+      "../images/catimg/judgycat2.webp"
+    ],
+    Bored: [
+      "../images/catimg/boredcat1.webp",
+      "../images/catimg/boredcat2.webp"
+    ]
+  };
 
-    const images = moodImages[mood] || [];
-    const gallery = document.getElementById("gallery");
+  const images = moodImages[mood] || [];
+  const gallery = document.getElementById("gallery");
 
-    if (images.length === 0) {
-      gallery.innerHTML = "<p>Няма изображения за това настроение.</p>";
-    } else {
-      images.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = mood + " cat";
-        gallery.appendChild(img);
-      });
+  if (images.length === 0) {
+    gallery.innerHTML = "<p>Няма изображения за това настроение.</p>";
+  } else {
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = mood + " cat";
+      gallery.appendChild(img);
+    });
+  }
+  function toggleMenu() {
+  document.getElementById("menuDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches('.menu-toggle')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
     }
-  </script>
+  }
+}
+</script>
 </body>
 </html>
