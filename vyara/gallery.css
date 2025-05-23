@@ -1,48 +1,113 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f0e4dc, #fff);
-  color: #333;
+  background: linear-gradient(to bottom, #f9e7d6, #fff5ee);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 100vh;
-  padding-top: 30px;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  padding-top: 60px;
+  position: relative;
 }
 
-.container {
-  max-width: 900px;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
+
+body::before,
+body::after,
+html::before,
+html::after {
+  content: "";
+  position: fixed;
+  background: rgba(210, 145, 170, 1);
+  z-index: -1;
 }
+
+body::before {
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 100vh;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+body::after {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100vh;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+html::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+html::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
 
 h1 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #aa4455;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #aa4455;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center; /* center the row */
 }
 
 .gallery img {
-  width: 100%;
+  width: 300px;
   height: auto;
+  object-fit: cover; /* ensures the image fills the box without distortion */
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
-
 .gallery img:hover {
   transform: scale(1.05);
+}
+.container {
+  max-width: 10000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.cat-toy-img {
+  position: fixed;
+  bottom: 20px;
+  left: -5px;
+  width: 100px;
+  transform: rotate(-15deg);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
 }

@@ -6,6 +6,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: 'Quicksand', sans-serif;
+      color: #5a524e;
     }
     
 .main-wrapper {
@@ -155,6 +157,7 @@ body {
       font-size: 1rem;
       cursor: pointer;
       transition: transform 0.2s ease;
+      font-family: 'Poppins', Arial, sans-serif;
     }
 
     .emotion-button:hover {
