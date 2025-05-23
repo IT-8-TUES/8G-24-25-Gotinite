@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customize Your Cat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+    <div class="page-title">Customize your kitty</div>
+    <ul class="menu hidden" id="nav-menu">
+      <li><a href="index.html">Customizer</a></li>
+      <li><a href="character.html">MeowMood</a></li>
+      <li><a href="sleep.html">Sleepy Thoughts</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="quiz.html">Cat Quiz</a></li>
+      <li><a href="what-cat.html">What Cat Are You?</a></li>
+    </ul>
+  </nav>
+
+  <div class="customizer-container">
+    <div class="cat-preview">
+      <div class="cat-background"></div>
+      <div class="cat" id="cat">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="eyes">
+          <div class="eye left" id="eye-left"></div>
+          <div class="eye right" id="eye-right"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="whiskers">
+          <div class="whisker left1"></div>
+          <div class="whisker left2"></div>
+          <div class="whisker left3"></div>
+          <div class="whisker right1"></div>
+          <div class="whisker right2"></div>
+          <div class="whisker right3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="customizer-controls">
+      <div class="controls-box">
+
+        <label for="fur">Fur Color:</label>
+        <input type="color" id="fur" value="#ffccaa" />
+
+        <label for="eyes">Eye Color:</label>
+        <input type="color" id="eyes" value="#00cc99" />
+
+        <button onclick="saveCat()">Save and Nap</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <img src="cat_toy.webp" alt="Cat Toy" class="cat-toy-img" />
+</body>
+</html>
