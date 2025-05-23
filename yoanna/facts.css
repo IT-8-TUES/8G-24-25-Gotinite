@@ -1,0 +1,67 @@
+
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #f4e3d3, #fff5ee);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.fact {
+    background-color: #fffafa;
+    border-radius: 15px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(210, 145, 170, 0.85);
+}
+
+.fact:hover {
+    background-color: #eaeaff;
+    transform: scale(1.05);
+    border-color: rgba(210, 145, 170, 0.85);
+}
+
+.fact .short {
+    display: block;
+    font-size: 14px;
+    color: #5a524e; /* топъл кремаво-сив цвят */
+    font-weight: 600;
+    padding: 0 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fact .full {
+    display: none;
+    font-size: 13px;
+    color: #5a524e; /* топъл кремаво-сив цвят */
+    padding: 0 8px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.fact:hover .short {
+    display: none;
+}
+
+.fact:hover .full {
+    display: block;
+}
