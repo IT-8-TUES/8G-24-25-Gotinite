@@ -106,7 +106,7 @@ function saveCat() {
   const eyeInput = document.getElementById('eyes');
   localStorage.setItem('furColor', furInput.value);
   localStorage.setItem('eyeColor', eyeInput.value);
-  window.location.href = 'nap.html';
+  window.location.href = '../vyara/index.html';
 }
 
 function toggleMenu() {
@@ -197,3 +197,10 @@ window.onload = () => {
     newQuote("Default");
   }
 };
+
+// Load the shared navbar.html into the page
+fetch('../navbar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+      });

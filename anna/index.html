@@ -5,24 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customize Your Cat</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../navbar.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </div>
-    <div class="page-title">Customize your kitty</div>
-    <ul class="menu hidden" id="nav-menu">
-      <li><a href="index.html">Customizer</a></li>
-      <li><a href="character.html">MeowMood</a></li>
-      <li><a href="nap.html">Sleepy Thoughts</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="quiz.html">Cat Quiz</a></li>
-      <li><a href="what-cat.html">What Cat Are You?</a></li>
-    </ul>
-  </nav>
-
+  <div id="navbar-container"></div>
+  
   <div class="customizer-container">
     <div class="cat-preview">
       <div class="cat-background"></div>
@@ -47,7 +35,6 @@
 
     <div class="customizer-controls">
       <div class="controls-box">
-
         <label for="fur">Fur Color:</label>
         <input type="color" id="fur" value="#ffccaa" />
 
