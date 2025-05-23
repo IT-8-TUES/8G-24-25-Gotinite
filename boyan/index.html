@@ -6,6 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div class="dropdown">
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <div id="menuDropdown" class="dropdown-content">
+            <a href="anna/index.html">Customize</a>
+            <a href="vyara/index.html">Meow Mood</a>
+            <a href="anna/nap.html">Cat Nap</a>
+            <a href="vyara/gallery.html">Gallery</a>
+            <a href="yoanna/index.html">Quiz Me</a>
+            <a href="boyan/index.html">Cat Type</a>
+            <a href="yoanna/facts.html">Facts</a>
+          </div>
+        </div>
+        <div class="page-title">Customize your cat</div>
+        <div style="width: 26px;"></div>
+      </nav>
     <div class="container">
         <h1>What Kind of Cat Are You?</h1>
         <form id="quizForm">
@@ -75,6 +91,21 @@
     </div>
 
     <script>
+        function toggleMenu() {
+  document.getElementById("menuDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches('.menu-toggle')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
         function showResult() {
             const form = document.getElementById("quizForm");
             const answers = new FormData(form);
