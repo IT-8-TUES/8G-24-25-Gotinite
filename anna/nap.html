@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nap Time</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="nap.css" />
 </head>
 <body>
-  <div class="navbar"></div>
-  <div class="cat" id="cat">
-    <div class="ear left"></div>
-    <div class="ear right"></div>
-    <div class="eyes">
-      <div class="eye left" id="eye-left"></div>
-      <div class="eye right" id="eye-right"></div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </div>
-    <div class="nose"></div>
-    <div class="whiskers">
-      <div class="whisker left1"></div>
-      <div class="whisker left2"></div>
-      <div class="whisker left3"></div>
-      <div class="whisker right1"></div>
-      <div class="whisker right2"></div>
-      <div class="whisker right3"></div>
-    </div>
-  </div>
+    <div class="page-title">Nap Time</div>
+    <ul class="menu hidden" id="nav-menu">
+      <li><a href="index.html">Customizer</a></li>
+      <li><a href="character.html">MeowMood</a></li>
+      <li><a href="sleep.html">Sleepy Thoughts</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="quiz.html">Cat Quiz</a></li>
+      <li><a href="what-cat.html">What Cat Are You?</a></li>
+    </ul>
+  </nav>
 
-  <div class="quote-box">
-    <p id="quote">Click below for a relaxing cat thought.</p>
-    <button onclick="newQuote()">New Quote</button>
+  <div class="nap-container">
+    <div class="cat-container">
+      <div class="cat" id="cat">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="eyes">
+          <div class="eye left" id="eye-left"></div>
+          <div class="eye right" id="eye-right"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="whiskers">
+          <div class="whisker left1"></div>
+          <div class="whisker left2"></div>
+          <div class="whisker left3"></div>
+          <div class="whisker right1"></div>
+          <div class="whisker right2"></div>
+          <div class="whisker right3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <p id="quote">Click below for a relaxing cat thought.</p>
+      <button onclick="newQuote()">New Quote</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

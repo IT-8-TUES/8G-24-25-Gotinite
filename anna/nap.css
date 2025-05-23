@@ -1,0 +1,40 @@
+.nap-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* For responsiveness */
+  padding: 120px 20px 40px;
+  gap: 50px;
+}
+
+.cat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.quote-box {
+  max-width: 300px;
+  padding: 20px;
+  background: rgba(216, 157, 177, 0.5); /* restored pink background with transparency */
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  color: #fffaf0;
+}
