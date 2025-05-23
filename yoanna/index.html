@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz: How Well Do You Know Cats?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quiz: How Well Do You Know Cats?</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            <p>1. How many lives is a cat said to have?</p>
+            <label><input type="radio" name="q1" value="1"> 7</label><br>
+            <label><input type="radio" name="q1" value="0"> 5</label><br>
+            <label><input type="radio" name="q1" value="0"> 3</label>
+        </div>
+
+        <div class="question">
+            <p>2. Can cats see in the dark?</p>
+            <label><input type="radio" name="q2" value="1"> Yes</label><br>
+            <label><input type="radio" name="q2" value="0"> No</label>
+        </div>
+
+        <div class="question">
+            <p>3. What is the cat’s most developed sense?</p>
+            <label><input type="radio" name="q3" value="0"> Taste</label><br>
+            <label><input type="radio" name="q3" value="1"> Hearing</label><br>
+            <label><input type="radio" name="q3" value="0"> Touch</label>
+        </div>
+
+        <div class="question">
+            <p>4. How many toes do cats have on their front paws?</p>
+            <label><input type="radio" name="q4" value="1"> 5</label><br>
+            <label><input type="radio" name="q4" value="0"> 4</label><br>
+            <label><input type="radio" name="q4" value="0"> 6</label>
+        </div>
+
+        <div class="question">
+            <p>5. What is the most appropriate food for cats?</p>
+            <label><input type="radio" name="q5" value="1"> Special cat food</label><br>
+            <label><input type="radio" name="q5" value="0"> Chocolate</label><br>
+            <label><input type="radio" name="q5" value="0"> Bread</label>
+        </div>
+
+        <div class="question">
+            <p>6. What do cats NOT like?</p>
+            <label><input type="radio" name="q6" value="1"> Water</label><br>
+            <label><input type="radio" name="q6" value="0"> Warmth</label><br>
+            <label><input type="radio" name="q6" value="0"> High places</label>
+        </div>
+
+        <div id="result" class="hidden"></div>
+        <div id="comment" class="hidden"></div>
+
+        <button type="button" onclick="calculateResult()">Check Your Score</button>
+    </form>
+
+    <script>
+        function calculateResult() {
+            const form = document.forms['quizForm'];
+            let score = 0;
+
+            const allQuestions = document.querySelectorAll('.question');
+            allQuestions.forEach(q => {
+                q.classList.remove('correct-answer', 'incorrect-answer');
+            });
+
+            for (let i = 1; i <= 6; i++) {
+                const question = form['q' + i];
+                for (let j = 0; j < question.length; j++) {
+                    const input = question[j];
+                    const label = input.parentElement;
+
+                    if (input.value === "1") {
+                        label.parentElement.classList.add('correct-answer');
+                    }
+
+                    if (input.checked && input.value === "0") {
+                        label.parentElement.classList.add('incorrect-answer');
+                    }
+
+                    if (input.checked && input.value === "1") {
+                        score++;
+                    }
+                }
+            }
+
+            const percentage = (score / 6) * 100;
+            const resultBox = document.getElementById('result');
+            resultBox.classList.remove('hidden');
+            resultBox.innerText = `You answered ${score} out of 6 questions correctly. That's ${percentage.toFixed(2)}%.`;
+
+            const comment = document.getElementById('comment');
+            comment.classList.remove('hidden');
+            if (score === 6) {
+                comment.innerText = "Excellent! You're a true cat expert! 🐱";
+            } else if (score >= 4) {
+                comment.innerText = "Nice job! You know quite a bit about cats!";
+            } else if (score >= 2) {
+                comment.innerText = "You're getting there! Keep learning!";
+            } else {
+                comment.innerText = "Keep trying! Cats are fun to learn about!";
+            }
+        }
+    </script>
+</body>
+</html>
