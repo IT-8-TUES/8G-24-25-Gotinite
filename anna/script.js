@@ -63,9 +63,60 @@ function saveCat() {
   window.location.href = 'nap.html';
 }
 
+function toggleMenu() {
+  const menu = document.getElementById("nav-menu");
+  menu.classList.toggle("hidden");
+}
+
+// -------- EYEBROW STYLES --------
+const browStyles = {
+  Angry: [
+    'transform: rotate(20deg) translate(-30px, 10px);',
+    'transform: rotate(-20deg) translate(30px, 6px);'
+  ],
+  Happy: [
+    'transform: rotate(-1deg) translate(-30px, 10px);',
+    'transform: rotate(1deg) translate(30px, 6px);'
+  ],
+  Sad: [
+    'transform: rotate(15deg) translate(30px, 5px);',
+    'transform: rotate(-15deg) translate(-30px, 1px);'
+  ],
+  Judgy: [
+    'transform: rotate(10deg) translate(-30px, 15px);',
+    'transform: rotate(-20deg) translate(30px, 6px);'
+  ],
+  Bored: [
+    'transform: rotate(-1deg) translate(-30px, 10px);',
+    'transform: rotate(-1deg) translate(30px, 6px);'
+  ],
+  Confused: [
+    'transform: rotate(-1deg) translate(-30px, 10px);',
+    'transform: rotate(-19deg) translate(30px, 6px);'
+  ]
+};
+
+function generateBrows(emotion) {
+  console.log("Generating brows for mood:", emotion);
+  const brows = document.getElementById('brows');
+  if (!brows || !browStyles[emotion]) return;
+
+  brows.innerHTML = '';
+  const styles = browStyles[emotion];
+
+  styles.forEach(style => {
+    const line = document.createElement('div');
+    line.classList.add('brow-line');
+    line.style.cssText = style;
+    brows.appendChild(line);
+  });
+}
+
+// -------- PAGE LOAD --------
 window.onload = () => {
   const fur = localStorage.getItem('furColor') || '#ffccaa';
   const eyes = localStorage.getItem('eyeColor') || '#00cc99';
+  const mood = localStorage.getItem('catMood');
   const shade = darkenColor(fur, 0.25);
 
   const cat = document.getElementById('cat');
@@ -93,16 +144,9 @@ window.onload = () => {
     furInput.addEventListener('input', updatePreview);
     eyeInput.addEventListener('input', updatePreview);
   }
-};
 
-
-
-
-
-
-
-
-function toggleMenu() {
-    const menu = document.getElementById("nav-menu");
-    menu.classList.toggle("hidden");
+  // 👉 Apply brows on load
+  if (mood) {
+    generateBrows(mood);
   }
+};
