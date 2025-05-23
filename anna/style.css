@@ -153,7 +153,7 @@ html::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 60px;
   padding: 210px 20px 60px;
   width: 100%;
   max-width: 1200px;
