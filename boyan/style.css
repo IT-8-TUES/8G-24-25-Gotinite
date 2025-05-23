@@ -82,11 +82,11 @@ button:hover {
 }
 nav {
     width: 100%;
-    background: rgba(210, 145, 170, 0.85);
+    background:rgba(210, 145, 170, 1);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px; /* Increased vertical and horizontal padding */
+    padding: 2px 30px; /* Increased vertical and horizontal padding */
     position: sticky;
     top: 0;
     z-index: 1000;
